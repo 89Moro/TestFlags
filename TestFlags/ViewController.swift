@@ -38,10 +38,11 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        var flag = cell.viewWithTag(1) as! UIButton
+        var flag = cell.viewWithTag(1) as! UIImageView
         var label = cell.viewWithTag(2) as! UILabel
         label.text = arrCountryTag[indexPath.row]
-        flag.setImage(arrFlags[indexPath.row], for: UIControlState.normal)
+        flag.image = arrFlags[indexPath.row]
+
         return cell
         
     }
